@@ -3,75 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juiz de Futsal e Vôlei - Carreira e Salário</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Federação de Arbitragem - Carreira e Documentos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset e Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background-color: #f5f5f5; color: #333; }
+
+        /* Topo - Logos de Parceiros */
+        .top-bar {
+            background: white;
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .partner-logos img { height: 40px; filter: grayscale(100%); opacity: 0.7; }
+
+        /* Navbar Escura */
+        nav {
+            background: #2c3e50;
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand img { height: 50px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: white; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; font-weight: bold; }
+
+        /* Hero / Banner de Título */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 10% 30px;
+        }
+        .hero h1 { color: #2ecc71; font-size: 2.5rem; text-transform: uppercase; }
+
+        /* Conteúdo Principal */
+        .content { padding: 40px 10%; }
+
+        .section-title {
+            color: #1a2a3a;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        /* Lista de Documentos Estilo Federação */
+        .doc-item {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 15px 25px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .doc-item:hover { background: #f0f4f8; border-color: #3498db; }
+        .doc-title { font-weight: bold; color: #555; text-transform: uppercase; }
+        .doc-download { color: #34495e; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .doc-download:after { content: '📄'; } /* Ícone simples simulando o PDF */
+
+        /* Estilo para Dados e Salários */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .info-card { background: white; padding: 20px; border-left: 5px solid #2ecc71; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .info-card h3 { font-size: 1rem; color: #7f8c8d; margin-bottom: 10px; }
+        .info-card p { font-size: 1.4rem; font-weight: bold; color: #2c3e50; }
+
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 30px; font-size: 0.8rem; margin-top: 50px; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Carreira: Juiz de Futsal e Vôlei</h1>
-            <p>Guia completo sobre atuação, salários e formação acadêmica.</p>
+    <div class="top-bar">
+        <div class="partner-logos">
+            <span style="font-weight: bold; color: #ccc;">PARCEIROS OFICIAIS</span>
         </div>
-    </header>
+        <div>
+            <input type="text" placeholder="Buscar no site..." style="padding: 5px; border: 1px solid #ddd;">
+        </div>
+    </div>
 
-    <main class="container">
-        <section class="card">
-            <h2>O que faz um Juiz de Futsal e Vôlei?</h2>
-            <p>O juiz é a autoridade máxima em quadra. Ele garante o cumprimento das regras, aplica penalidades e decide sobre situações cruciais de jogo. Exige-se conhecimento técnico profundo, preparo físico exemplar e rapidez mental.</p>
-            <div class="image-placeholder">
-                <img src="https://via.placeholder.com/600x300" alt="Juiz de Futsal">
+    <nav>
+        <div class="nav-brand">
+            <span style="color: white; font-weight: 800; font-size: 1.2rem;">FEDERAÇÃO DE ARBITRAGEM</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Transparência</a>
+            <a href="#">Calendário</a>
+            <a href="#">Notas Oficiais</a>
+            <a href="#">Área Restrita</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Arbitragem</h1>
+    </div>
+
+    <div class="content">
+        
+        <h2 class="section-title">Dados de Carreira 2026</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Salário Médio Nacional</h3>
+                <p>R$ 3.000,00 por partida</p>
             </div>
-        </section>
-
-        <section class="grid">
-            <div class="card">
-                <h2>Quanto ganha?</h2>
-                <p>A remuneração varia por nível de competição:</p>
-                <ul>
-                    <li><strong>Locais/Estaduais:</strong> R$ 500,00 a R$ 1.500,00 por jogo.</li>
-                    <li><strong>Nacionais/Internacionais:</strong> R$ 3.000,00+ por partida.</li>
-                </ul>
+            <div class="info-card">
+                <h3>Nota de Corte ENEM</h3>
+                <p>650 - 720 Pontos</p>
             </div>
+        </div>
 
-            <div class="card">
-                <h2>Nota de Corte (ENEM)</h2>
-                <p>Médias estimadas para cursos relacionados:</p>
-                <div class="badge-container">
-                    <span class="badge">Educação Física: 600-700</span>
-                    <span class="badge">Direito: 650-750</span>
-                    <span class="badge">Arbitragem: 500-600</span>
-                </div>
-            </div>
-        </section>
+        <h2 class="section-title">Direção de Arbitragem</h2>
+        <div class="doc-item">
+            <span class="doc-title">Corpo Técnico Arbitragem 2026</span>
+            <a href="#" class="doc-download">Faça o download do arquivo</a>
+        </div>
 
-        <section class="card">
-            <h2>Formação Necessária</h2>
-            <p>O tempo de estudo depende do caminho escolhido:</p>
-            <table>
-                <tr>
-                    <th>Curso</th>
-                    <th>Duração</th>
-                </tr>
-                <tr>
-                    <td>Educação Física (Bacharelado)</td>
-                    <td>4 a 5 anos</td>
-                </tr>
-                <tr>
-                    <td>Direito (Foco Desportivo)</td>
-                    <td>5 anos</td>
-                </tr>
-                <tr>
-                    <td>Cursos Técnicos de Arbitragem</td>
-                    <td>6 meses a 1 ano</td>
-                </tr>
-            </table>
-        </section>
-    </main>
+        <h2 class="section-title">Regulamentos e Salários</h2>
+        <div class="doc-item">
+            <span class="doc-title">Tabela de Taxas e Diárias (Futsal e Vôlei)</span>
+            <a href="#" class="doc-download">Visualizar PDF</a>
+        </div>
+        <div class="doc-item">
+            <span class="doc-title">Guia de Conduta do Árbitro Federado</span>
+            <a href="#" class="doc-download">Faça o download do arquivo</a>
+        </div>
+
+        <h2 class="section-title">Formação Acadêmica</h2>
+        <div class="doc-item">
+            <span class="doc-title">Lista de Cursos de Graduação Recomendados</span>
+            <a href="#" class="doc-download">Acessar lista</a>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2026 - Informações sobre carreira de juiz no Brasil.</p>
+        Informações sobre carreira de juiz de futsal e vôlei no Brasil. © 2026 - Todos os direitos reservados.
     </footer>
 
 </body>
