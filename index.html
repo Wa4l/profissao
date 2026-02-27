@@ -234,42 +234,547 @@
 
             <div class="doc-card">
                 <div class="doc-info">
-                    <h3>Lista Sigla de Filiados 2025/2026</h3>
-                </div>
-                <a href="#" class="btn-download">FAÇA O DOWNLOAD DO ARQUIVO</a>
-            </div>
-        </section>
+                    <h3>Taxa Diaria Arbitragem 2025/2026</h3>
 
-        <section style="margin-top: 60px;">
-            <div class="section-header">
-                <h2>Carreira e Remuneração</h2>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <p>Salário Nacional (Elite)</p>
-                    <span>R$ 3.000,00+</span>
-                    <p>Por Partida</p>
-                </div>
-                <div class="stat-item">
-                    <p>Média Estadual</p>
-                    <span>R$ 1.500,00</span>
-                    <p>Por Jogo</p>
-                </div>
-                <div class="stat-item">
-                    <p>Nota de Corte ENEM</p>
-                    <span>680 pts</span>
-                    <p>Educação Física / Direito</p>
-                </div>
-            </div>
-        </section>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbitragem de Vôlei - Guia Completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #2a5298;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            color: #667eea;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .salary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .salary-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .salary-table th,
+        .salary-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .salary-table tbody tr:hover {
+            background-color: #f5f5f5;
+            transition: background-color 0.3s ease;
+        }
+
+        .salary-table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .salary-value {
+            font-weight: bold;
+            color: #2a5298;
+            font-size: 1.1rem;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .requirement-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-left: 5px solid #667eea;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .requirement-card h4 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .requirement-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .requirement-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .requirement-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .level-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .level-municipal {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .level-nacional {
+            background-color: #cfe2ff;
+            color: #084298;
+            border: 1px solid #b6d4fe;
+        }
+
+        .level-internacional {
+            background-color: #fff3cd;
+            color: #664d03;
+            border: 1px solid #ffecb5;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .comparison-table thead {
+            background: #2a5298;
+            color: white;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table tbody tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .comparison-table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #1565c0;
+        }
+
+        footer {
+            background: #2a5298;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .salary-table,
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .salary-table th,
+            .salary-table td,
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏐 Arbitragem de Vôlei no Brasil</h1>
+        <p>Guia Completo: Remuneração, Requisitos e Categorias</p>
+    </header>
+
+    <div class="container">
+        <!-- Seção de Remuneração -->
+        <div class="section">
+            <h2>💰 Remuneração por Partida</h2>
+            <p>
+                A remuneração de árbitros de vôlei varia conforme o nível de competição e a categoria do árbitro. 
+                Os valores apresentados abaixo referem-se à Superliga 2024/2025, a principal competição de vôlei profissional do Brasil, 
+                regulamentada pela Confederação Brasileira de Voleibol (CBV).
+            </p>
+
+            <h3>Tabela de Taxas - Superliga 2024/2025</h3>
+            <table class="salary-table">
+                <thead>
+                    <tr>
+                        <th>Categoria de Árbitro</th>
+                        <th>Valor por Partida (Superliga)</th>
+                        <th>Competições Estaduais</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Árbitro Internacional</strong></td>
+                        <td class="salary-value">R$ 785,00</td>
+                        <td>Taxa da Federação Local</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Árbitro Continental</strong></td>
+                        <td class="salary-value">R$ 693,00</td>
+                        <td>Taxa da Federação Local</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Árbitro Nacional</strong></td>
+                        <td class="salary-value">R$ 602,00</td>
+                        <td>Taxa da Federação Local</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Árbitro Aspirante a Nacional</strong></td>
+                        <td class="salary-value">R$ 501,00</td>
+                        <td>Taxa da Federação Local</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Árbitro Regional</strong></td>
+                        <td class="salary-value">R$ 421,00</td>
+                        <td>R$ 100,00 - R$ 300,00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Juiz de Linha</strong></td>
+                        <td class="salary-value">R$ 340,00</td>
+                        <td>Taxa da Federação Local</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apontador Especial</strong></td>
+                        <td class="salary-value">R$ 485,00</td>
+                        <td>Taxa da Federação Local</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apontador Nacional</strong></td>
+                        <td class="salary-value">R$ 403,00</td>
+                        <td>Taxa da Federação Local</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <strong>📌 Nota Importante:</strong> Para competições municipais e regionais (Superliga B e C), 
+                as taxas são definidas pelas Federações Estaduais, variando geralmente entre R$ 100,00 e R$ 300,00 por partida. 
+                Árbitros internacionais também recebem ressarcimento de despesas de deslocamento e hospedagem em competições oficiais.
+            </div>
+        </div>
+
+        <!-- Seção de Categorias e Requisitos -->
+        <div class="section">
+            <h2>📋 Categorias de Árbitros e Requisitos</h2>
+            <p>
+                A arbitragem de vôlei no Brasil é organizada em diferentes níveis, cada um com requisitos específicos. 
+                A progressão entre categorias segue uma estrutura bem definida pela COBRAV (Comissão Brasileira de Arbitragem de Voleibol).
+            </p>
+
+            <div class="requirements-grid">
+                <!-- Árbitro Regional/Municipal -->
+                <div class="requirement-card">
+                    <span class="level-badge level-municipal">NÍVEL MUNICIPAL</span>
+                    <h4>Árbitro Regional/Municipal</h4>
+                    <ul>
+                        <li>Ser aprovado em curso de formação ministrado pelas federações estaduais</li>
+                        <li>Cumprir estágio regulamentar de 1 ano em competições regionais</li>
+                        <li>Registro na federação estadual local</li>
+                        <li>Participação em clínicas de atualização anuais</li>
+                        <li>Remuneração: R$ 100,00 a R$ 300,00 por partida</li>
+                    </ul>
+                </div>
+
+                <!-- Árbitro Nacional -->
+                <div class="requirement-card">
+                    <span class="level-badge level-nacional">NÍVEL NACIONAL</span>
+                    <h4>Árbitro Nacional</h4>
+                    <ul>
+                        <li>Pertencer à categoria Regional por no mínimo 2 anos</li>
+                        <li>Ter concluído curso universitário (diploma obrigatório)</li>
+                        <li>Ser aprovado em avaliação teórica e prática pela COBRAV</li>
+                        <li>Participar de cursos de atualização anuais</li>
+                        <li>Remuneração: R$ 602,00 por partida (Superliga)</li>
+                    </ul>
+                </div>
+
+                <!-- Árbitro Internacional -->
+                <div class="requirement-card">
+                    <span class="level-badge level-internacional">NÍVEL INTERNACIONAL</span>
+                    <h4>Árbitro Internacional</h4>
+                    <ul>
+                        <li>Ser Árbitro Nacional e estar inscrito na FIVB há 3+ anos</li>
+                        <li>Ter no máximo 40 anos para ingressar no curso internacional</li>
+                        <li>Ser aprovado em prova de língua inglesa (credenciada pela CBV)</li>
+                        <li>Aprovação pela presidência da CBV e COBRAV</li>
+                        <li>Remuneração: R$ 785,00 por partida (Superliga)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Comparação -->
+        <div class="section">
+            <h2>🔄 Comparativo entre Níveis</h2>
+            <p>
+                Conheça as principais diferenças entre os três níveis de arbitragem de vôlei no Brasil:
+            </p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Árbitro Municipal</th>
+                        <th>Árbitro Nacional</th>
+                        <th>Árbitro Internacional</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Remuneração por Partida</strong></td>
+                        <td>R$ 100 - R$ 300</td>
+                        <td>R$ 602,00</td>
+                        <td>R$ 785,00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tempo de Experiência Mínima</strong></td>
+                        <td>1 ano</td>
+                        <td>2 anos (Regional)</td>
+                        <td>3+ anos (Nacional)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Escolaridade Exigida</strong></td>
+                        <td>Ensino Médio</td>
+                        <td>Curso Universitário</td>
+                        <td>Curso Universitário</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Competições</strong></td>
+                        <td>Estaduais e Municipais</td>
+                        <td>Superliga e Nacionais</td>
+                        <td>Competições Internacionais</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Benefícios Adicionais</strong></td>
+                        <td>Nenhum</td>
+                        <td>Transporte e Hospedagem</td>
+                        <td>Transporte Aéreo, Hospedagem, Diárias</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Requisito de Idioma</strong></td>
+                        <td>Não</td></html>
+                        <td>Não</td>
+                        <td>Inglês (Nível Intermediário)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Seção de Benefícios -->
+        <div class="section">
+            <h2>🎁 Benefícios Adicionais</h2>
+
+            <h3>Árbitros Nacionais e Internacionais</h3>
+            <p>
+                Além da remuneração por partida, árbitros que atuam em competições oficiais de nível nacional e internacional 
+                recebem diversos benefícios:
+            </p>
+
+            <ul style="list-style-position: inside; margin-left: 1rem;">
+                <li><strong>Transporte:</strong> Pago pela CBV para distâncias superiores a 400 km (aéreo ou rodoviário executivo)</li>
+                <li><strong>Hospedagem:</strong> Fornecida pela organização da competição</li>
+                <li><strong>Alimentação:</strong> Fornecida pela organização da competição</li>
+                <li><strong>Diárias Internacionais:</strong> Equivalentes a USD 100,00 para competições internacionais</li>
+                <li><strong>Ressarcimento de Vistos:</strong> Para participação em competições internacionais</li>
+                <li><strong>Atualização Profissional:</strong> Participação em clínicas e cursos de aperfeiçoamento</li>
+            </ul>
+
+            <h3>Árbitros Municipais</h3>
+            <p>
+                Árbitros regionais/municipais recebem principalmente a remuneração por partida, sem benefícios adicionais. 
+                No entanto, têm oportunidade de participar de cursos de formação e atualização oferecidos pelas federações estaduais.
+            </p>
+        </div>
+
+        <!-- Seção de Carreira -->
+        <div class="section">
+            <h2>🚀 Caminho da Carreira em Arbitragem de Vôlei</h2>
+
+            <p>
+                A progressão na carreira de árbitro de vôlei segue um caminho estruturado:
+            </p>
+
+            <div style="background: #f0f0f0; padding: 2rem; border-radius: 8px; margin: 1.5rem 0;">
+                <div style="text-align: center; font-size: 1.1rem; line-height: 2;">
+                    <strong>Curso de Formação</strong>
+                    <div style="margin: 1rem 0;">↓</div>
+                    <strong>Árbitro Regional (1 ano mínimo)</strong>
+                    <div style="margin: 1rem 0;">↓</div>
+                    <strong>Árbitro Nacional (2 anos mínimo)</strong>
+                    <div style="margin: 1rem 0;">↓</div>
+                    <strong>Árbitro Internacional (3+ anos mínimo)</strong>
+                </div>
+            </div>
+
+            <p>
+                Cada etapa requer aprovação em avaliações específicas e cumprimento de requisitos estabelecidos pela COBRAV. 
+                A dedicação, conhecimento das regras, capacidade de comunicação e preparo físico são fundamentais para o sucesso 
+                em cada nível.
+            </p>
+
+            <div class="info-box">
+                <strong>💡 Dica:</strong> Para iniciar sua carreira como árbitro de vôlei, procure a federação estadual de vôlei 
+                de seu estado. Elas oferecem cursos de formação regularmente e podem orientar você sobre os próximos passos.
+            </div>
+        </div>
+
+        <!-- Seção de Informações Adicionais -->
+        <div class="section">
+            <h2>ℹ️ Informações Importantes</h2>
+
+            <h3>Órgãos Reguladores</h3>
+            <ul style="list-style-position: inside; margin-left: 1rem;">
+                <li><strong>CBV (Confederação Brasileira de Voleibol):</strong> Órgão máximo de arbitragem no Brasil</li>
+                <li><strong>COBRAV (Comissão Brasileira de Arbitragem de Voleibol):</strong> Responsável pela regulamentação e padronização</li>
+                <li><strong>FIVB (Fédération Internationale de Volleyball):</strong> Órgão internacional que regulamenta árbitros internacionais</li>
+                <li><strong>Federações Estaduais:</strong> Responsáveis pela formação e registro de árbitros locais</li>
+            </ul>
+
+            <h3>Documentação Necessária</h3>
+            <ul style="list-style-position: inside; margin-left: 1rem;">
+                <li>Cópia do Diploma de Curso de Formação com notas oficiais da CBV</li>
+                <li>Registro como árbitro na federação estadual</li>
+                <li>Relatório anual de atividades (para árbitros nacionais)</li>
+                <li>Certificado de participação em cursos de atualização</li>
+                <li>Atestado médico (para árbitros internacionais)</li>
+            </ul>
+
+            <h3>Avaliação de Desempenho</h3>
+            <p>
+                Árbitros são constantemente avaliados por seu desempenho técnico e disciplinar. A COBRAV realiza análises 
+                periódicas através de:
+            </p>
+            <ul style="list-style-position: inside; margin-left: 1rem;">
+                <li>Observação direta de árbitros em competições</li>
+                <li>Avaliação de relatórios de atividades</li>
+                <li>Análise de vídeos de partidas</li>
+                <li>Feedback de técnicos e dirigentes</li>
+                <li>Participação em clínicas e seminários</li>
+            </ul>
+        </div>
     </div>
 
     <footer>
-        <p>Federação Paranaense de Arbitragem Esportiva © 2026</p>
-        <p style="margin-top: 10px;">Rua Esporte, 1000 - Curitiba/PR | contato@federacaopr.com.br</p>
+        <p><strong>Arbitragem de Vôlei - Guia Completo</strong></p>
+        <p>Informações baseadas no Regulamento da COBRAV 2021/2024 e Taxas de Arbitragem da CBV 2024/2025</p>
+        <p>Última atualização: Fevereiro de 2026</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">© 2026 - Todos os direitos reservados</p>
     </footer>
-
 </body>
 </html>
+             
