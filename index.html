@@ -1,246 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbitragem - Vôlei e Futsal Paraná</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --azul-escuro: #1a2a3a;
-            --azul-footer: #121c26;
-            --verde-parana: #2ecc71;
-            --branco: #ffffff;
-            --cinza-claro: #f4f7f6;
-            --texto: #444;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-
-        body { background-color: var(--branco); color: var(--texto); }
-
-        /* Topo Institucional */
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 8%;
-            background: white;
-        }
-
-        .logos-parceiros img { height: 35px; margin-right: 20px; opacity: 0.8; }
-
-        /* Menu Principal (Escuro) */
-        nav {
-            background-color: var(--azul-escuro);
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .logo-federacao {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .logo-circle {
-            width: 45px;
-            height: 45px;
-            background: var(--verde-parana);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            color: var(--azul-escuro);
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--verde-parana); }
-
-        /* Banner Principal Animado */
-        .hero {
-            height: 250px;
-            background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.8)), 
-                        url('https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&q=80&w=1500');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            padding: 0 8%;
-        }
-
-        .hero h1 {
-            color: var(--verde-parana);
-            font-size: 3rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
-        /* Área de Conteúdo */
-        .main-content { padding: 50px 8%; max-width: 1400px; margin: 0 auto; }
-
-        .section-header {
-            border-bottom: 2px solid #eee;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-        }
-
-        .section-header h2 {
-            color: var(--azul-escuro);
-            text-transform: uppercase;
-            font-size: 1.4rem;
-        }
-
-        /* Lista de Downloads Profissional */
-        .doc-card {
-            background: var(--cinza-claro);
-            padding: 20px 30px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            border-left: 0px solid var(--verde-parana);
-        }
-
-        .doc-card:hover {
-            background: #fff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-left: 8px solid var(--verde-parana);
-            transform: translateX(5px);
-        }
-
-        .doc-info h3 {
-            font-size: 1rem;
-            color: #555;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .btn-download {
-            background: var(--azul-escuro);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-download:hover { background: var(--verde-parana); color: var(--azul-escuro); }
-
-        /* Grid de Salários e Informações */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .stat-item {
-            background: var(--azul-escuro);
-            color: white;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .stat-item span { color: var(--verde-parana); font-size: 2rem; font-weight: 800; display: block; }
-        .stat-item p { font-size: 0.8rem; text-transform: uppercase; margin-top: 10px; opacity: 0.8; }
-
-        footer {
-            background: var(--azul-footer);
-            color: #888;
-            padding: 40px 8%;
-            text-align: center;
-            font-size: 0.8rem;
-            margin-top: 60px;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            nav { flex-direction: column; gap: 15px; }
-            .nav-links a { margin: 0 10px; font-size: 0.7rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="header-top">
-        <div class="logos-parceiros">
-            <strong style="font-size: 0.7rem; color: #999; display: block; margin-bottom: 5px;">PATROCÍNIO</strong>
-            <img src="https://upload.wikimedia.org/wikipedia/pt/d/d1/Itaipu_Binacional_logo.png" alt="Itaipu">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Penalty_logo.svg/2560px-Penalty_logo.svg.png" alt="Penalty">
-        </div>
-    </div>
-
-    <nav>
-        <a href="#" class="logo-federacao">
-            <div class="logo-circle">PR</div>
-            <div>
-                <div style="font-weight: 800; font-size: 1.1rem; line-height: 1;">FEDERAÇÃO PARANAENSE</div>
-                <div style="font-size: 0.7rem; letter-spacing: 2px;">ARBITRAGEM 2026</div>
-            </div>
-        </a>
-        <div class="nav-links">
-            <a href="#">Calendário</a>
-            <a href="#">Notas Oficiais</a>
-            <a href="#">Regulamentos</a>
-            <a href="#">Fale Conosco</a>
-        </div>
-    </nav>
-
-    <div class="hero">
-        <h1>Arbitragem</h1>
-    </div>
-
-    <div class="main-content">
-        
-        <section>
-            <div class="section-header">
-                <h2>Direção de Arbitragem</h2>
-            </div>
-
-            <div class="doc-card">
-                <div class="doc-info">
-                    <h3>Corpo Técnico Arbitragem 2026</h3>
-                </div>
-                <a href="#" class="btn-download">FAÇA O DOWNLOAD DO ARQUIVO</a>
-            </div>
-
-            <div class="doc-card">
-                <div class="doc-info">
-                    <h3>Taxa Diaria Arbitragem 2025/2026</h3>
-
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbitragem de Vôlei - Guia Completo</title>
+    <title>Arbitragem de Vôlei Profissional - Guia de Carreira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -248,533 +15,1552 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #059669;
+            --accent-light: #10b981;
+            --background: #ffffff;
+            --foreground: #1f2937;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
+            color: var(--foreground);
+            background-color: var(--background);
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
         }
 
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 2rem auto;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
             padding: 0 1rem;
         }
 
-        .section {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
         }
 
-        .section h2 {
-            color: #2a5298;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
         }
 
-        .section h3 {
-            color: #667eea;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: white;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        .section p {
-            margin-bottom: 1rem;
-            text-align: justify;
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4rem;
         }
 
-        .salary-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            overflow-x: auto;
-            display: block;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--primary);
+            transition: transform 0.3s ease;
         }
 
-        .salary-table thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--primary);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
+            font-size: 1.5rem;
         }
 
-        .salary-table th,
-        .salary-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+        .logo-text h1 {
+            font-size: 1.125rem;
+            line-height: 1;
+            margin: 0;
         }
 
-        .salary-table tbody tr:hover {
-            background-color: #f5f5f5;
-            transition: background-color 0.3s ease;
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin: 0;
+            font-weight: 500;
         }
 
-        .salary-table tbody tr:nth-child(odd) {
-            background-color: #f9f9f9;
-        }
-
-        .salary-value {
-            font-weight: bold;
-            color: #2a5298;
-            font-size: 1.1rem;
-        }
-
-        .requirements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .nav-links {
+            display: none;
             gap: 2rem;
-            margin-top: 1.5rem;
+            align-items: center;
         }
 
-        .requirement-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-left: 5px solid #667eea;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
         }
 
-        .requirement-card h4 {
-            color: #2a5298;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+        .nav-links a {
+            text-decoration: none;
+            color: var(--foreground);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        .requirement-card ul {
-            list-style: none;
-            padding-left: 0;
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
-        .requirement-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+        .cta-button {
+            display: none;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .cta-button {
+                display: block;
+            }
+        }
+
+        .cta-button:hover {
+            background-color: #047857;
+        }
+
+        /* Hero Section */
+        .hero {
             position: relative;
-            color: #555;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
         }
 
-        .requirement-card li:before {
-            content: "✓";
+        .hero-background {
             position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.2rem;
+            inset: 0;
+            background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663171797401/FJjJ7HAcSxB6m9LRJYAGYr/hero-volleyball-arbitrage-acFCAYQpoAb2SpqM7U9rNE.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .level-badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
         }
 
-        .level-municipal {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            padding: 5rem 0;
+            max-width: 42rem;
         }
 
-        .level-nacional {
-            background-color: #cfe2ff;
-            color: #084298;
-            border: 1px solid #b6d4fe;
+        .hero h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        .level-internacional {
-            background-color: #fff3cd;
-            color: #664d03;
-            border: 1px solid #ffecb5;
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3.75rem;
+            }
         }
 
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            display: block;
-            overflow-x: auto;
+        .hero p {
+            font-size: 1.125rem;
+            color: #f3f4f6;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
-        .comparison-table thead {
-            background: #2a5298;
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .hero-btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .hero-btn-primary {
+            background-color: var(--accent);
             color: white;
         }
 
-        .comparison-table th,
-        .comparison-table td {
-            padding: 1rem;
+        .hero-btn-primary:hover {
+            background-color: #047857;
+            box-shadow: 0 10px 15px rgba(5, 150, 105, 0.3);
+        }
+
+        .hero-btn-secondary {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat {
             text-align: left;
-            border-bottom: 1px solid #ddd;
         }
 
-        .comparison-table tbody tr:hover {
-            background-color: #f0f0f0;
-        }
-
-        .comparison-table tbody tr:nth-child(odd) {
-            background-color: #f9f9f9;
-        }
-
-        .info-box {
-            background: #e7f3ff;
-            border-left: 4px solid #2196F3;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-        }
-
-        .info-box strong {
-            color: #1565c0;
-        }
-
-        footer {
-            background: #2a5298;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-        footer p {
+        .stat-value {
+            font-size: 1.875rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            color: var(--accent);
             margin-bottom: 0.5rem;
         }
 
+        .stat-label {
+            font-size: 0.875rem;
+            color: #d1d5db;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--muted);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        .bg-gray-50 {
+            background-color: var(--gray-50);
+        }
+
+        /* Categories Section */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background-color: white;
+            border: 2px solid var(--border);
+            border-radius: 0.65rem;
+            padding: 2rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-card.blue {
+            background-color: #f0f9ff;
+            border-color: #bfdbfe;
+        }
+
+        .category-card.green {
+            background-color: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+
+        .category-card.indigo {
+            background-color: #eef2ff;
+            border-color: #c7d2fe;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .badge-blue {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-green {
+            background-color: #dcfce7;
+            color: #15803d;
+        }
+
+        .badge-indigo {
+            background-color: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .card-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-field-label {
+            font-size: 0.875rem;
+            color: var(--muted);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-field-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .card-field-value.text {
+            color: var(--foreground);
+            font-size: 1rem;
+        }
+
+        .requirements-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .requirements-list li {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .requirements-list li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .benefits-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Salary Table */
+        .table-container {
+            background-color: white;
+            border: 2px solid var(--border);
+            border-radius: 0.65rem;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        th:nth-child(2),
+        th:nth-child(3) {
+            text-align: right;
+        }
+
+        th:nth-child(4) {
+            text-align: center;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.875rem;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: var(--gray-50);
+        }
+
+        tbody tr:hover {
+            background-color: var(--gray-100);
+        }
+
+        td:nth-child(2),
+        td:nth-child(3) {
+            text-align: right;
+        }
+
+        td:nth-child(2) {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.125rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .table-info {
+            padding: 2rem;
+            background-color: #f0f9ff;
+            border-top: 1px solid var(--border);
+        }
+
+        .table-info h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .table-info ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .table-info li {
+            font-size: 0.875rem;
+            color: var(--foreground);
+        }
+
+        /* Career Path */
+        .career-timeline {
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        .career-step {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            border: 2px solid rgba(30, 58, 138, 0.2);
+            border-radius: 0.65rem;
+            margin-bottom: 2rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .career-step:hover {
+            border-color: rgba(30, 58, 138, 0.5);
+        }
+
+        .step-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background-color: rgba(5, 150, 105, 0.1);
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.875rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .step-duration {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent);
+            background-color: rgba(5, 150, 105, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .step-description {
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        .arrow-down {
+            text-align: center;
+            padding: 1rem 0;
+            color: rgba(30, 58, 138, 0.3);
+            font-size: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .info-card {
+            padding: 2rem;
+            border: 2px solid rgba(5, 150, 105, 0.2);
+            background-color: rgba(5, 150, 105, 0.05);
+            border-radius: 0.65rem;
+        }
+
+        .info-card.primary {
+            border-color: rgba(30, 58, 138, 0.2);
+            background-color: rgba(30, 58, 138, 0.05);
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        .info-card li {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .info-card li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Courses Section */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background-color: white;
+            border: 2px solid var(--border);
+            border-radius: 0.65rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            border-color: rgba(30, 58, 138, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card:hover .course-title {
+            color: var(--accent);
+        }
+
+        .course-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-icon {
+            width: 2rem;
+            height: 2rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+
+        .course-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .course-info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-info-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .course-info-value {
+            font-weight: 600;
+            color: var(--foreground);
+        }
+
+        .course-topics {
+            margin-bottom: 2rem;
+        }
+
+        .course-topics h4 {
+            font-size: 0.875rem;
+            color: var(--foreground);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .course-topics ul {
+            list-style: none;
+        }
+
+        .course-topics li {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .course-topics li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .course-requirements {
+            padding: 1rem;
+            background-color: var(--gray-50);
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .course-requirements-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-requirements-text {
+            font-size: 0.875rem;
+            color: var(--foreground);
+            font-weight: 500;
+        }
+
+        .courses-info {
+            margin-top: 3rem;
+            padding: 2rem;
+            border: 2px solid rgba(5, 150, 105, 0.2);
+            background-color: rgba(5, 150, 105, 0.05);
+            border-radius: 0.65rem;
+        }
+
+        .courses-info h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .courses-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .courses-info-col h4 {
+            font-weight: 600;
+            color: var(--foreground);
+            margin-bottom: 1rem;
+        }
+
+        .courses-info-col ul {
+            list-style: none;
+        }
+
+        .courses-info-col li {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .courses-info-col li::before {
+            content: "→";
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .footer-brand-text h3 {
+            font-size: 1.125rem;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .footer-brand-text p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .footer-brand-desc {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        .footer-section h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+            .hero h1 {
+                font-size: 2rem;
             }
 
-            .section {
-                padding: 1.5rem;
+            .hero p {
+                font-size: 1rem;
             }
 
-            .requirements-grid {
+            .section-header h2 {
+                font-size: 1.875rem;
+            }
+
+            .hero-stats {
                 grid-template-columns: 1fr;
-            }
-
-            .salary-table,
-            .comparison-table {
-                font-size: 0.9rem;
-            }
-
-            .salary-table th,
-            .salary-table td,
-            .comparison-table th,
-            .comparison-table td {
-                padding: 0.7rem;
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>🏐 Arbitragem de Vôlei no Brasil</h1>
-        <p>Guia Completo: Remuneração, Requisitos e Categorias</p>
+        <nav class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🏆</div>
+                <div class="logo-text">
+                    <h1>Arbitragem</h1>
+                    <p>Vôlei Pro</p>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#categorias">Categorias</a>
+                <a href="#salarios">Salários</a>
+                <a href="#carreira">Carreira</a>
+                <a href="#cursos">Cursos</a>
+            </div>
+            <button class="cta-button">Começar</button>
+        </nav>
     </header>
 
-    <div class="container">
-        <!-- Seção de Remuneração -->
-        <div class="section">
-            <h2>💰 Remuneração por Partida</h2>
-            <p>
-                A remuneração de árbitros de vôlei varia conforme o nível de competição e a categoria do árbitro. 
-                Os valores apresentados abaixo referem-se à Superliga 2024/2025, a principal competição de vôlei profissional do Brasil, 
-                regulamentada pela Confederação Brasileira de Voleibol (CBV).
-            </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Sua Carreira em Arbitragem de Vôlei</h1>
+            <p>Guia completo sobre as categorias de árbitros, salários, requisitos e o caminho para se tornar um árbitro profissional de vôlei no Brasil.</p>
+            
+            <div class="hero-buttons">
+                <button class="hero-btn hero-btn-primary">Explorar Categorias →</button>
+                <button class="hero-btn hero-btn-secondary">Saiba Mais</button>
+            </div>
 
-            <h3>Tabela de Taxas - Superliga 2024/2025</h3>
-            <table class="salary-table">
-                <thead>
-                    <tr>
-                        <th>Categoria de Árbitro</th>
-                        <th>Valor por Partida (Superliga)</th>
-                        <th>Competições Estaduais</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Árbitro Internacional</strong></td>
-                        <td class="salary-value">R$ 785,00</td>
-                        <td>Taxa da Federação Local</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Árbitro Continental</strong></td>
-                        <td class="salary-value">R$ 693,00</td>
-                        <td>Taxa da Federação Local</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Árbitro Nacional</strong></td>
-                        <td class="salary-value">R$ 602,00</td>
-                        <td>Taxa da Federação Local</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Árbitro Aspirante a Nacional</strong></td>
-                        <td class="salary-value">R$ 501,00</td>
-                        <td>Taxa da Federação Local</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Árbitro Regional</strong></td>
-                        <td class="salary-value">R$ 421,00</td>
-                        <td>R$ 100,00 - R$ 300,00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Juiz de Linha</strong></td>
-                        <td class="salary-value">R$ 340,00</td>
-                        <td>Taxa da Federação Local</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Apontador Especial</strong></td>
-                        <td class="salary-value">R$ 485,00</td>
-                        <td>Taxa da Federação Local</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Apontador Nacional</strong></td>
-                        <td class="salary-value">R$ 403,00</td>
-                        <td>Taxa da Federação Local</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="info-box">
-                <strong>📌 Nota Importante:</strong> Para competições municipais e regionais (Superliga B e C), 
-                as taxas são definidas pelas Federações Estaduais, variando geralmente entre R$ 100,00 e R$ 300,00 por partida. 
-                Árbitros internacionais também recebem ressarcimento de despesas de deslocamento e hospedagem em competições oficiais.
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Níveis de Carreira</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">R$785</div>
+                    <div class="stat-label">Máximo por Partida</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">CBV</div>
+                    <div class="stat-label">Órgão Regulador</div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Seção de Categorias e Requisitos -->
-        <div class="section">
-            <h2>📋 Categorias de Árbitros e Requisitos</h2>
-            <p>
-                A arbitragem de vôlei no Brasil é organizada em diferentes níveis, cada um com requisitos específicos. 
-                A progressão entre categorias segue uma estrutura bem definida pela COBRAV (Comissão Brasileira de Arbitragem de Voleibol).
-            </p>
+    <!-- Categories Section -->
+    <section id="categorias" class="bg-gray-50">
+        <div class="container">
+            <div class="section-header">
+                <h2>Categorias de Árbitros</h2>
+                <p>Conheça os três níveis de arbitragem de vôlei no Brasil, seus requisitos e benefícios</p>
+            </div>
 
-            <div class="requirements-grid">
-                <!-- Árbitro Regional/Municipal -->
-                <div class="requirement-card">
-                    <span class="level-badge level-municipal">NÍVEL MUNICIPAL</span>
-                    <h4>Árbitro Regional/Municipal</h4>
-                    <ul>
-                        <li>Ser aprovado em curso de formação ministrado pelas federações estaduais</li>
-                        <li>Cumprir estágio regulamentar de 1 ano em competições regionais</li>
-                        <li>Registro na federação estadual local</li>
-                        <li>Participação em clínicas de atualização anuais</li>
-                        <li>Remuneração: R$ 100,00 a R$ 300,00 por partida</li>
+            <div class="categories-grid">
+                <!-- Regional -->
+                <div class="category-card blue">
+                    <span class="badge badge-blue">Nível Municipal</span>
+                    <h3 class="card-title">Árbitro Regional/Municipal</h3>
+                    
+                    <div class="card-row">
+                        <div class="card-field">
+                            <span class="card-field-label">Salário/Partida</span>
+                            <span class="card-field-value">R$ 100 - R$ 300</span>
+                        </div>
+                        <div class="card-field">
+                            <span class="card-field-label">Experiência</span>
+                            <span class="card-field-value text">1 ano mínimo</span>
+                        </div>
+                    </div>
+
+                    <h4 style="font-weight: 600; margin-bottom: 1rem;">Requisitos</h4>
+                    <ul class="requirements-list">
+                        <li>Aprovação em curso de formação</li>
+                        <li>Estágio regulamentar de 1 ano</li>
+                        <li>Registro na federação estadual</li>
+                        <li>Clínicas de atualização anuais</li>
+                    </ul>
+
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                        <p style="font-size: 0.875rem; color: var(--muted); font-weight: 500; margin-bottom: 0.5rem;">Competições</p>
+                        <p style="font-weight: 600;">Competições estaduais e municipais</p>
+                    </div>
+                </div>
+
+                <!-- National -->
+                <div class="category-card green">
+                    <span class="badge badge-green">Nível Nacional</span>
+                    <h3 class="card-title">Árbitro Nacional</h3>
+                    
+                    <div class="card-row">
+                        <div class="card-field">
+                            <span class="card-field-label">Salário/Partida</span>
+                            <span class="card-field-value">R$ 602</span>
+                        </div>
+                        <div class="card-field">
+                            <span class="card-field-label">Experiência</span>
+                            <span class="card-field-value text">2 anos (Regional)</span>
+                        </div>
+                    </div>
+
+                    <h4 style="font-weight: 600; margin-bottom: 1rem;">Requisitos</h4>
+                    <ul class="requirements-list">
+                        <li>Categoria Regional por 2+ anos</li>
+                        <li>Curso universitário obrigatório</li>
+                        <li>Aprovação em avaliação teórica e prática</li>
+                        <li>Cursos de atualização anuais</li>
+                    </ul>
+
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                        <p style="font-size: 0.875rem; color: var(--muted); font-weight: 500; margin-bottom: 0.5rem;">Competições</p>
+                        <p style="font-weight: 600;">Superliga e competições nacionais</p>
+                    </div>
+
+                    <h4 style="font-weight: 600; margin-bottom: 1rem;">Benefícios Adicionais</h4>
+                    <ul class="benefits-list">
+                        <li>Transporte (distância > 400km)</li>
+                        <li>Hospedagem fornecida</li>
+                        <li>Alimentação fornecida</li>
                     </ul>
                 </div>
 
-                <!-- Árbitro Nacional -->
-                <div class="requirement-card">
-                    <span class="level-badge level-nacional">NÍVEL NACIONAL</span>
-                    <h4>Árbitro Nacional</h4>
+                <!-- International -->
+                <div class="category-card indigo">
+                    <span class="badge badge-indigo">Nível Internacional</span>
+                    <h3 class="card-title">Árbitro Internacional</h3>
+                    
+                    <div class="card-row">
+                        <div class="card-field">
+                            <span class="card-field-label">Salário/Partida</span>
+                            <span class="card-field-value">R$ 785</span>
+                        </div>
+                        <div class="card-field">
+                            <span class="card-field-label">Experiência</span>
+                            <span class="card-field-value text">3+ anos (Nacional)</span>
+                        </div>
+                    </div>
+
+                    <h4 style="font-weight: 600; margin-bottom: 1rem;">Requisitos</h4>
+                    <ul class="requirements-list">
+                        <li>Árbitro Nacional com 3+ anos na FIVB</li>
+                        <li>Máximo 40 anos para ingressar</li>
+                        <li>Prova de inglês intermediário</li>
+                        <li>Aprovação da CBV e COBRAV</li>
+                    </ul>
+
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                        <p style="font-size: 0.875rem; color: var(--muted); font-weight: 500; margin-bottom: 0.5rem;">Competições</p>
+                        <p style="font-weight: 600;">Competições internacionais</p>
+                    </div>
+
+                    <h4 style="font-weight: 600; margin-bottom: 1rem;">Benefícios Adicionais</h4>
+                    <ul class="benefits-list">
+                        <li>Transporte aéreo</li>
+                        <li>Hospedagem internacional</li>
+                        <li>Diárias USD 100</li>
+                        <li>Ressarcimento de vistos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salary Section -->
+    <section id="salarios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tabela de Remuneração</h2>
+                <p>Valores de remuneração por partida conforme a categoria e nível de competição (Superliga 2024/2025)</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria de Árbitro</th>
+                            <th>Superliga</th>
+                            <th>Competições Estaduais</th>
+                            <th>Nível</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Árbitro Internacional</td>
+                            <td>R$ 785,00</td>
+                            <td>Taxa da Federação</td>
+                            <td><span class="badge badge-indigo">Internacional</span></td>
+                        </tr>
+                        <tr>
+                            <td>Árbitro Continental</td>
+                            <td>R$ 693,00</td>
+                            <td>Taxa da Federação</td>
+                            <td><span class="badge badge-indigo">Internacional</span></td>
+                        </tr>
+                        <tr>
+                            <td>Árbitro Nacional</td>
+                            <td>R$ 602,00</td>
+                            <td>Taxa da Federação</td>
+                            <td><span class="badge badge-green">Nacional</span></td>
+                        </tr>
+                        <tr>
+                            <td>Árbitro Aspirante a Nacional</td>
+                            <td>R$ 501,00</td>
+                            <td>Taxa da Federação</td>
+                            <td><span class="badge badge-green">Nacional</span></td>
+                        </tr>
+                        <tr>
+                            <td>Árbitro Regional</td>
+                            <td>R$ 421,00</td>
+                            <td>R$ 100 - R$ 300</td>
+                            <td><span class="badge badge-blue">Regional</span></td>
+                        </tr>
+                        <tr>
+                            <td>Juiz de Linha</td>
+                            <td>R$ 340,00</td>
+                            <td>Taxa da Federação</td>
+                            <td><span class="badge" style="background-color: #f3f4f6; color: #6b7280;">Suporte</span></td>
+                        </tr>
+                        <tr>
+                            <td>Apontador Especial</td>
+                            <td>R$ 485,00</td>
+                            <td>Taxa da Federação</td>
+                            <td><span class="badge" style="background-color: #f3f4f6; color: #6b7280;">Suporte</span></td>
+                        </tr>
+                        <tr>
+                            <td>Apontador Nacional</td>
+                            <td>R$ 403,00</td>
+                            <td>Taxa da Federação</td>
+                            <td><span class="badge" style="background-color: #f3f4f6; color: #6b7280;">Suporte</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="table-info">
+                    <h3>📌 Informações Importantes</h3>
                     <ul>
-                        <li>Pertencer à categoria Regional por no mínimo 2 anos</li>
-                        <li>Ter concluído curso universitário (diploma obrigatório)</li>
-                        <li>Ser aprovado em avaliação teórica e prática pela COBRAV</li>
-                        <li>Participar de cursos de atualização anuais</li>
-                        <li>Remuneração: R$ 602,00 por partida (Superliga)</li>
+                        <li>• Para competições municipais e regionais (Superliga B e C), as taxas são definidas pelas Federações Estaduais</li>
+                        <li>• Árbitros internacionais recebem ressarcimento de despesas de deslocamento e hospedagem em competições oficiais</li>
+                        <li>• Valores referem-se à Superliga 2024/2025, principal competição profissional de vôlei do Brasil</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Path Section -->
+    <section id="carreira" class="bg-gray-50">
+        <div class="container">
+            <div class="section-header">
+                <h2>Caminho da Carreira</h2>
+                <p>Conheça os passos necessários para progredir na carreira de arbitragem de vôlei no Brasil</p>
+            </div>
+
+            <div class="career-timeline">
+                <!-- Step 1 -->
+                <div class="career-step">
+                    <div class="step-icon">📚</div>
+                    <div class="step-content">
+                        <div class="step-header">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.75rem; display: inline-block;">Etapa 1</span>
+                                <h3 class="step-title">Curso de Formação</h3>
+                            </div>
+                            <span class="step-duration">Variável</span>
+                        </div>
+                        <p class="step-description">Inicie com um curso de formação oferecido pela federação estadual de vôlei do seu estado</p>
+                    </div>
+                </div>
+
+                <div class="arrow-down">↓</div>
+
+                <!-- Step 2 -->
+                <div class="career-step">
+                    <div class="step-icon">🏐</div>
+                    <div class="step-content">
+                        <div class="step-header">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.75rem; display: inline-block;">Etapa 2</span>
+                                <h3 class="step-title">Árbitro Regional</h3>
+                            </div>
+                            <span class="step-duration">1 ano mínimo</span>
+                        </div>
+                        <p class="step-description">Após aprovação no curso, atue como árbitro regional com mínimo de 1 ano de experiência</p>
+                    </div>
+                </div>
+
+                <div class="arrow-down">↓</div>
+
+                <!-- Step 3 -->
+                <div class="career-step">
+                    <div class="step-icon">🏆</div>
+                    <div class="step-content">
+                        <div class="step-header">
+                            <div>
+                                <span class="badge badge-green" style="margin-bottom: 0.75rem; display: inline-block;">Etapa 3</span>
+                                <h3 class="step-title">Árbitro Nacional</h3>
+                            </div>
+                            <span class="step-duration">2 anos mínimo</span>
+                        </div>
+                        <p class="step-description">Com 2+ anos de experiência regional e diploma universitário, avance para o nível nacional</p>
+                    </div>
+                </div>
+
+                <div class="arrow-down">↓</div>
+
+                <!-- Step 4 -->
+                <div class="career-step">
+                    <div class="step-icon">🌍</div>
+                    <div class="step-content">
+                        <div class="step-header">
+                            <div>
+                                <span class="badge badge-indigo" style="margin-bottom: 0.75rem; display: inline-block;">Etapa 4</span>
+                                <h3 class="step-title">Árbitro Internacional</h3>
+                            </div>
+                            <span class="step-duration">3+ anos mínimo</span>
+                        </div>
+                        <p class="step-description">Após 3+ anos como árbitro nacional e aprovação em prova de inglês, atue internacionalmente</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Requisitos Gerais</h3>
+                    <ul>
+                        <li>Conhecimento profundo das regras de vôlei</li>
+                        <li>Capacidade de comunicação clara</li>
+                        <li>Preparo físico adequado</li>
+                        <li>Participação em clínicas de atualização</li>
                     </ul>
                 </div>
 
-                <!-- Árbitro Internacional -->
-                <div class="requirement-card">
-                    <span class="level-badge level-internacional">NÍVEL INTERNACIONAL</span>
-                    <h4>Árbitro Internacional</h4>
+                <div class="info-card primary">
+                    <h3>Órgãos Reguladores</h3>
                     <ul>
-                        <li>Ser Árbitro Nacional e estar inscrito na FIVB há 3+ anos</li>
-                        <li>Ter no máximo 40 anos para ingressar no curso internacional</li>
-                        <li>Ser aprovado em prova de língua inglesa (credenciada pela CBV)</li>
-                        <li>Aprovação pela presidência da CBV e COBRAV</li>
-                        <li>Remuneração: R$ 785,00 por partida (Superliga)</li>
+                        <li><strong>CBV</strong> - Confederação Brasileira de Voleibol</li>
+                        <li><strong>COBRAV</strong> - Comissão Brasileira de Arbitragem</li>
+                        <li><strong>FIVB</strong> - Federação Internacional de Voleibol</li>
+                        <li><strong>FEV</strong> - Federações Estaduais de Vôlei</li>
                     </ul>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Seção de Comparação -->
-        <div class="section">
-            <h2>🔄 Comparativo entre Níveis</h2>
-            <p>
-                Conheça as principais diferenças entre os três níveis de arbitragem de vôlei no Brasil:
-            </p>
+    <!-- Courses Section -->
+    <section id="cursos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cursos e Formação</h2>
+                <p>Estrutura completa de formação para árbitros de vôlei, com cursos em diferentes níveis</p>
+            </div>
 
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Aspecto</th>
-                        <th>Árbitro Municipal</th>
-                        <th>Árbitro Nacional</th>
-                        <th>Árbitro Internacional</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Remuneração por Partida</strong></td>
-                        <td>R$ 100 - R$ 300</td>
-                        <td>R$ 602,00</td>
-                        <td>R$ 785,00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tempo de Experiência Mínima</strong></td>
-                        <td>1 ano</td>
-                        <td>2 anos (Regional)</td>
-                        <td>3+ anos (Nacional)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Escolaridade Exigida</strong></td>
-                        <td>Ensino Médio</td>
-                        <td>Curso Universitário</td>
-                        <td>Curso Universitário</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Competições</strong></td>
-                        <td>Estaduais e Municipais</td>
-                        <td>Superliga e Nacionais</td>
-                        <td>Competições Internacionais</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Benefícios Adicionais</strong></td>
-                        <td>Nenhum</td>
-                        <td>Transporte e Hospedagem</td>
-                        <td>Transporte Aéreo, Hospedagem, Diárias</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Requisito de Idioma</strong></td>
-                        <td>Não</td></html>
-                        <td>Não</td>
-                        <td>Inglês (Nível Intermediário)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <span class="badge badge-blue" style="margin-bottom: 0.75rem; display: inline-block;">Iniciante</span>
+                            <h3 class="course-title">Curso Básico de Arbitragem</h3>
+                        </div>
+                        <div class="course-icon">📖</div>
+                    </div>
 
-        <!-- Seção de Benefícios -->
-        <div class="section">
-            <h2>🎁 Benefícios Adicionais</h2>
+                    <div class="course-info">
+                        <div class="course-info-item">
+                            <span class="course-info-label">Duração</span>
+                            <span class="course-info-value">40 horas</span>
+                        </div>
+                        <div class="course-info-item">
+                            <span class="course-info-label">Público</span>
+                            <span class="course-info-value">Aberto</span>
+                        </div>
+                    </div>
 
-            <h3>Árbitros Nacionais e Internacionais</h3>
-            <p>
-                Além da remuneração por partida, árbitros que atuam em competições oficiais de nível nacional e internacional 
-                recebem diversos benefícios:
-            </p>
+                    <div class="course-topics">
+                        <h4>Tópicos Abordados</h4>
+                        <ul>
+                            <li>Regras fundamentais de vôlei</li>
+                            <li>Posicionamento em quadra</li>
+                            <li>Sinalizações e gestos</li>
+                            <li>Ética profissional</li>
+                        </ul>
+                    </div>
 
-            <ul style="list-style-position: inside; margin-left: 1rem;">
-                <li><strong>Transporte:</strong> Pago pela CBV para distâncias superiores a 400 km (aéreo ou rodoviário executivo)</li>
-                <li><strong>Hospedagem:</strong> Fornecida pela organização da competição</li>
-                <li><strong>Alimentação:</strong> Fornecida pela organização da competição</li>
-                <li><strong>Diárias Internacionais:</strong> Equivalentes a USD 100,00 para competições internacionais</li>
-                <li><strong>Ressarcimento de Vistos:</strong> Para participação em competições internacionais</li>
-                <li><strong>Atualização Profissional:</strong> Participação em clínicas e cursos de aperfeiçoamento</li>
-            </ul>
+                    <div class="course-requirements">
+                        <div class="course-requirements-label">Pré-requisitos</div>
+                        <div class="course-requirements-text">Ensino médio completo</div>
+                    </div>
+                </div>
 
-            <h3>Árbitros Municipais</h3>
-            <p>
-                Árbitros regionais/municipais recebem principalmente a remuneração por partida, sem benefícios adicionais. 
-                No entanto, têm oportunidade de participar de cursos de formação e atualização oferecidos pelas federações estaduais.
-            </p>
-        </div>
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <span class="badge badge-green" style="margin-bottom: 0.75rem; display: inline-block;">Intermediário</span>
+                            <h3 class="course-title">Curso de Árbitro Regional</h3>
+                        </div>
+                        <div class="course-icon">🏅</div>
+                    </div>
 
-        <!-- Seção de Carreira -->
-        <div class="section">
-            <h2>🚀 Caminho da Carreira em Arbitragem de Vôlei</h2>
+                    <div class="course-info">
+                        <div class="course-info-item">
+                            <span class="course-info-label">Duração</span>
+                            <span class="course-info-value">60 horas</span>
+                        </div>
+                        <div class="course-info-item">
+                            <span class="course-info-label">Público</span>
+                            <span class="course-info-value">Aprovados no Básico</span>
+                        </div>
+                    </div>
 
-            <p>
-                A progressão na carreira de árbitro de vôlei segue um caminho estruturado:
-            </p>
+                    <div class="course-topics">
+                        <h4>Tópicos Abordados</h4>
+                        <ul>
+                            <li>Regulamentações avançadas</li>
+                            <li>Análise de vídeo</li>
+                            <li>Comunicação em competições</li>
+                            <li>Avaliação de desempenho</li>
+                        </ul>
+                    </div>
 
-            <div style="background: #f0f0f0; padding: 2rem; border-radius: 8px; margin: 1.5rem 0;">
-                <div style="text-align: center; font-size: 1.1rem; line-height: 2;">
-                    <strong>Curso de Formação</strong>
-                    <div style="margin: 1rem 0;">↓</div>
-                    <strong>Árbitro Regional (1 ano mínimo)</strong>
-                    <div style="margin: 1rem 0;">↓</div>
-                    <strong>Árbitro Nacional (2 anos mínimo)</strong>
-                    <div style="margin: 1rem 0;">↓</div>
-                    <strong>Árbitro Internacional (3+ anos mínimo)</strong>
+                    <div class="course-requirements">
+                        <div class="course-requirements-label">Pré-requisitos</div>
+                        <div class="course-requirements-text">Curso Básico + 1 ano de prática</div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <span class="badge badge-indigo" style="margin-bottom: 0.75rem; display: inline-block;">Avançado</span>
+                            <h3 class="course-title">Curso de Árbitro Nacional</h3>
+                        </div>
+                        <div class="course-icon">👥</div>
+                    </div>
+
+                    <div class="course-info">
+                        <div class="course-info-item">
+                            <span class="course-info-label">Duração</span>
+                            <span class="course-info-value">80 horas</span>
+                        </div>
+                        <div class="course-info-item">
+                            <span class="course-info-label">Público</span>
+                            <span class="course-info-value">Árbitros Regionais</span>
+                        </div>
+                    </div>
+
+                    <div class="course-topics">
+                        <h4>Tópicos Abordados</h4>
+                        <ul>
+                            <li>Regras internacionais</li>
+                            <li>Gestão de competições</li>
+                            <li>Protocolo profissional</li>
+                            <li>Avaliação técnica</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-requirements">
+                        <div class="course-requirements-label">Pré-requisitos</div>
+                        <div class="course-requirements-text">Diploma universitário + 2 anos Regional</div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <div>
+                            <span class="badge badge-indigo" style="margin-bottom: 0.75rem; display: inline-block;">Elite</span>
+                            <h3 class="course-title">Curso de Árbitro Internacional</h3>
+                        </div>
+                        <div class="course-icon">⏱️</div>
+                    </div>
+
+                    <div class="course-info">
+                        <div class="course-info-item">
+                            <span class="course-info-label">Duração</span>
+                            <span class="course-info-value">100 horas</span>
+                        </div>
+                        <div class="course-info-item">
+                            <span class="course-info-label">Público</span>
+                            <span class="course-info-value">Árbitros Nacionais</span>
+                        </div>
+                    </div>
+
+                    <div class="course-topics">
+                        <h4>Tópicos Abordados</h4>
+                        <ul>
+                            <li>Regulamentações FIVB</li>
+                            <li>Inglês técnico</li>
+                            <li>Competições internacionais</li>
+                            <li>Desenvolvimento profissional</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-requirements">
+                        <div class="course-requirements-label">Pré-requisitos</div>
+                        <div class="course-requirements-text">Árbitro Nacional + 3 anos FIVB + Inglês</div>
+                    </div>
                 </div>
             </div>
 
-            <p>
-                Cada etapa requer aprovação em avaliações específicas e cumprimento de requisitos estabelecidos pela COBRAV. 
-                A dedicação, conhecimento das regras, capacidade de comunicação e preparo físico são fundamentais para o sucesso 
-                em cada nível.
-            </p>
-
-            <div class="info-box">
-                <strong>💡 Dica:</strong> Para iniciar sua carreira como árbitro de vôlei, procure a federação estadual de vôlei 
-                de seu estado. Elas oferecem cursos de formação regularmente e podem orientar você sobre os próximos passos.
+            <div class="courses-info">
+                <h3>ℹ️ Informações sobre Formação</h3>
+                <div class="courses-info-grid">
+                    <div class="courses-info-col">
+                        <h4>Onde Encontrar Cursos</h4>
+                        <ul>
+                            <li>Federações Estaduais de Vôlei</li>
+                            <li>Confederação Brasileira de Voleibol (CBV)</li>
+                            <li>Comissão Brasileira de Arbitragem (COBRAV)</li>
+                            <li>Clínicas e seminários de atualização</li>
+                        </ul>
+                    </div>
+                    <div class="courses-info-col">
+                        <h4>Documentação Necessária</h4>
+                        <ul>
+                            <li>Diploma de curso com notas oficiais da CBV</li>
+                            <li>Registro na federação estadual</li>
+                            <li>Certificados de atualização</li>
+                            <li>Atestado médico (para internacionais)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Seção de Informações Adicionais -->
-        <div class="section">
-            <h2>ℹ️ Informações Importantes</h2>
-
-            <h3>Órgãos Reguladores</h3>
-            <ul style="list-style-position: inside; margin-left: 1rem;">
-                <li><strong>CBV (Confederação Brasileira de Voleibol):</strong> Órgão máximo de arbitragem no Brasil</li>
-                <li><strong>COBRAV (Comissão Brasileira de Arbitragem de Voleibol):</strong> Responsável pela regulamentação e padronização</li>
-                <li><strong>FIVB (Fédération Internationale de Volleyball):</strong> Órgão internacional que regulamenta árbitros internacionais</li>
-                <li><strong>Federações Estaduais:</strong> Responsáveis pela formação e registro de árbitros locais</li>
-            </ul>
-
-            <h3>Documentação Necessária</h3>
-            <ul style="list-style-position: inside; margin-left: 1rem;">
-                <li>Cópia do Diploma de Curso de Formação com notas oficiais da CBV</li>
-                <li>Registro como árbitro na federação estadual</li>
-                <li>Relatório anual de atividades (para árbitros nacionais)</li>
-                <li>Certificado de participação em cursos de atualização</li>
-                <li>Atestado médico (para árbitros internacionais)</li>
-            </ul>
-
-            <h3>Avaliação de Desempenho</h3>
-            <p>
-                Árbitros são constantemente avaliados por seu desempenho técnico e disciplinar. A COBRAV realiza análises 
-                periódicas através de:
-            </p>
-            <ul style="list-style-position: inside; margin-left: 1rem;">
-                <li>Observação direta de árbitros em competições</li>
-                <li>Avaliação de relatórios de atividades</li>
-                <li>Análise de vídeos de partidas</li>
-                <li>Feedback de técnicos e dirigentes</li>
-                <li>Participação em clínicas e seminários</li>
-            </ul>
-        </div>
-    </div>
-
+    <!-- Footer -->
     <footer>
-        <p><strong>Arbitragem de Vôlei - Guia Completo</strong></p>
-        <p>Informações baseadas no Regulamento da COBRAV 2021/2024 e Taxas de Arbitragem da CBV 2024/2025</p>
-        <p>Última atualização: Fevereiro de 2026</p>
-        <p style="margin-top: 1rem; opacity: 0.8;">© 2026 - Todos os direitos reservados</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <div class="footer-brand-icon">🏆</div>
+                        <div class="footer-brand-text">
+                            <h3>Arbitragem</h3>
+                            <p>Vôlei Pro</p>
+                        </div>
+                    </div>
+                    <p class="footer-brand-desc">Guia completo sobre carreira em arbitragem de vôlei no Brasil</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#categorias">Categorias</a></li>
+                        <li><a href="#salarios">Salários</a></li>
+                        <li><a href="#carreira">Carreira</a></li>
+                        <li><a href="#cursos">Cursos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Órgãos Reguladores</h4>
+                    <ul>
+                        <li><a href="#">CBV - Confederação</a></li>
+                        <li><a href="#">COBRAV - Comissão</a></li>
+                        <li><a href="#">FIVB - Internacional</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><strong>Email:</strong><br>info@arbitragem.com.br</li>
+                        <li><strong>Telefone:</strong><br>(41) 3333-3333</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider">
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Arbitragem de Vôlei Profissional. Todos os direitos reservados.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacidade</a>
+                        <a href="#">Termos</a>
+                        <a href="#">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Button interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.classList.contains('hero-btn-primary')) {
+                    document.getElementById('categorias').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-             
