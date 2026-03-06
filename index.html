@@ -1290,6 +1290,333 @@
         .messages-container::-webkit-scrollbar-thumb:hover {
             background: var(--muted);
         }
+
+        /* ==================== SEÇÃO DE COMENTÁRIOS/AVALIAÇÕES ==================== */
+
+        .testimonials-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+            padding: 5rem 0;
+            border-top: 2px solid var(--border);
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .testimonials-header p {
+            font-size: 1.125rem;
+            color: var(--muted);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        .testimonials-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(30, 58, 138, 0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            font-size: 0.875rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border: 2px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: rgba(30, 58, 138, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            font-size: 1.25rem;
+            color: #fbbf24;
+        }
+
+        .star.empty {
+            color: #e5e7eb;
+        }
+
+        .testimonial-text {
+            font-size: 0.9375rem;
+            color: var(--foreground);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.125rem;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            font-size: 0.9375rem;
+            color: var(--foreground);
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .testimonial-badge {
+            display: inline-block;
+            background-color: rgba(5, 150, 105, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+
+        .testimonial-badge.verified {
+            background-color: rgba(5, 150, 105, 0.15);
+            color: #047857;
+        }
+
+        .testimonial-badge::before {
+            content: "✓ ";
+            margin-right: 0.25rem;
+        }
+
+        .filter-section {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border);
+            background-color: white;
+            color: var(--foreground);
+            border-radius: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .testimonial-form-section {
+            background-color: white;
+            border: 2px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-header {
+            margin-bottom: 2rem;
+        }
+
+        .form-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: var(--muted);
+            font-size: 0.9375rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--foreground);
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            color: var(--foreground);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .rating-input {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .rating-input input {
+            display: none;
+        }
+
+        .rating-input label {
+            cursor: pointer;
+            font-size: 1.75rem;
+            color: #e5e7eb;
+            transition: color 0.2s ease;
+            margin: 0;
+        }
+
+        .rating-input input:checked ~ label,
+        .rating-input label:hover,
+        .rating-input label:hover ~ label {
+            color: #fbbf24;
+        }
+
+        .submit-btn {
+            padding: 0.875rem 2rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.2);
+        }
+
+        .submit-btn:hover {
+            background-color: #047857;
+            box-shadow: 0 8px 16px rgba(5, 150, 105, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            background-color: #dcfce7;
+            border: 2px solid #86efac;
+            color: #15803d;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -1887,6 +2214,104 @@
         </div>
     </section>
 
+    <!-- ==================== SEÇÃO DE COMENTÁRIOS/AVALIAÇÕES ==================== -->
+    <section id="depoimentos" class="testimonials-section">
+        <div class="container testimonials-container">
+            <!-- Header -->
+            <div class="testimonials-header">
+                <h2>💬 O Que Nossos Usuários Dizem</h2>
+                <p>Confira os depoimentos de pessoas que utilizaram nosso guia e tiveram sucesso em suas carreiras</p>
+                
+                <div class="testimonials-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">1.2K+</div>
+                        <div class="stat-text">Avaliações Positivas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9★</div>
+                        <div class="stat-text">Classificação Média</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-text">Taxa de Satisfação</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <button class="filter-btn active" onclick="filterTestimonials('all')">Todos</button>
+                <button class="filter-btn" onclick="filterTestimonials('5')">⭐⭐⭐⭐⭐ 5 Estrelas</button>
+                <button class="filter-btn" onclick="filterTestimonials('4')">⭐⭐⭐⭐ 4 Estrelas</button>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="testimonials-grid" id="testimonialsGrid">
+                <!-- Testimonials serão inseridas aqui via JavaScript -->
+            </div>
+
+            <!-- Form Section -->
+            <div class="testimonial-form-section">
+                <div class="form-header">
+                    <h3>✍️ Deixe Seu Depoimento</h3>
+                    <p>Sua opinião é muito importante! Compartilhe sua experiência com nosso guia</p>
+                </div>
+
+                <div class="success-message" id="successMessage">
+                    ✓ Obrigado! Seu depoimento foi enviado com sucesso e será revisado em breve.
+                </div>
+
+                <form id="testimonialForm" onsubmit="submitTestimonial(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Seu Nome *</label>
+                            <input type="text" id="name" name="name" required placeholder="João Silva">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="joao@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Categoria de Árbitro *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="Regional">Árbitro Regional</option>
+                                <option value="Nacional">Árbitro Nacional</option>
+                                <option value="Internacional">Árbitro Internacional</option>
+                                <option value="Interessado">Interessado em começar</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Sua Avaliação *</label>
+                            <div class="rating-input" id="ratingInput">
+                                <input type="radio" id="star5" name="rating" value="5" required>
+                                <label for="star5">★</label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4">★</label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3">★</label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2">★</label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1">★</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Seu Depoimento *</label>
+                        <textarea id="message" name="message" required placeholder="Compartilhe sua experiência com nosso guia..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar Depoimento</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -2334,6 +2759,201 @@ Tente reformular sua pergunta ou escolha um desses tópicos!`;
                 }
             });
         });
+
+        /**
+         * ==================== SISTEMA DE DEPOIMENTOS/COMENTÁRIOS ====================
+         * 
+         * Sistema completo de gerenciamento de depoimentos de usuários
+         * Armazena dados localmente e exibe com filtros
+         */
+
+        // Depoimentos pré-carregados
+        const defaultTestimonials = [
+            {
+                id: 1,
+                name: "Carlos Mendes",
+                category: "Nacional",
+                rating: 5,
+                message: "Muito obrigado! Este guia me ajudou bastante a entender todo o processo de progressão na carreira de arbitragem. As informações sobre salários e requisitos foram muito claras e precisas. Recomendo para todos que querem ingressar nesta profissão!",
+                date: "2024-12-15",
+                verified: true
+            },
+            {
+                id: 2,
+                name: "Fernanda Silva",
+                category: "Regional",
+                rating: 5,
+                message: "Excelente conteúdo! Estava perdida sobre como começar minha carreira como árbitra e este site respondeu todas as minhas dúvidas. A seção de cursos foi particularmente útil. Muito grato!",
+                date: "2024-12-10",
+                verified: true
+            },
+            {
+                id: 3,
+                name: "Roberto Costa",
+                category: "Internacional",
+                rating: 5,
+                message: "Perfeito! Como árbitro internacional, posso confirmar que as informações aqui são 100% precisas. A tabela de remuneração e os requisitos estão atualizados. Parabéns pela qualidade!",
+                date: "2024-12-05",
+                verified: true
+            },
+            {
+                id: 4,
+                name: "Mariana Oliveira",
+                category: "Interessado",
+                rating: 5,
+                message: "Adorei! Sempre quis ser árbitro de vôlei mas não sabia por onde começar. Este guia foi um divisor de águas para mim. Agora tenho um plano claro para minha carreira. Muito obrigada!",
+                date: "2024-11-28",
+                verified: true
+            },
+            {
+                id: 5,
+                name: "Paulo Gomes",
+                category: "Nacional",
+                rating: 5,
+                message: "Que site incrível! As informações são completas, bem organizadas e fáceis de entender. Recomendei para vários colegas árbitros. Continuem com esse excelente trabalho!",
+                date: "2024-11-20",
+                verified: true
+            },
+            {
+                id: 6,
+                name: "Juliana Ferreira",
+                category: "Regional",
+                rating: 5,
+                message: "Simplesmente fantástico! Consegui esclarecer todas as minhas dúvidas sobre os requisitos para progredir na carreira. O conteúdo é profissional e muito bem estruturado. Parabéns!",
+                date: "2024-11-15",
+                verified: true
+            },
+            {
+                id: 7,
+                name: "André Pereira",
+                category: "Interessado",
+                rating: 4,
+                message: "Muito bom! Encontrei praticamente tudo que procurava. A única coisa que senti falta foi mais informações sobre as federações estaduais específicas, mas no geral é excelente!",
+                date: "2024-11-10",
+                verified: true
+            },
+            {
+                id: 8,
+                name: "Beatriz Santos",
+                category: "Nacional",
+                rating: 5,
+                message: "Excelente guia! Muito profissional e informativo. Consegui entender melhor minha categoria e o que preciso fazer para evoluir. Recomendo muito para quem quer trabalhar com arbitragem!",
+                date: "2024-11-05",
+                verified: true
+            }
+        ];
+
+        function initTestimonials() {
+            const stored = localStorage.getItem('testimonials');
+            const testimonials = stored ? JSON.parse(stored) : defaultTestimonials;
+            
+            if (!stored) {
+                localStorage.setItem('testimonials', JSON.stringify(defaultTestimonials));
+            }
+            
+            renderTestimonials(testimonials);
+        }
+
+        function renderTestimonials(testimonials) {
+            const grid = document.getElementById('testimonialsGrid');
+            grid.innerHTML = '';
+
+            testimonials.forEach(testimonial => {
+                const card = document.createElement('div');
+                card.className = 'testimonial-card';
+                card.setAttribute('data-rating', testimonial.rating);
+                card.setAttribute('data-category', testimonial.category);
+
+                const starsHTML = generateStars(testimonial.rating);
+                const dateFormatted = new Date(testimonial.date).toLocaleDateString('pt-BR');
+
+                card.innerHTML = `
+                    <div class="rating">${starsHTML}</div>
+                    <p class="testimonial-text">"${escapeHtml(testimonial.message)}"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">${testimonial.name.charAt(0).toUpperCase()}</div>
+                        <div class="author-info">
+                            <h4>${escapeHtml(testimonial.name)}</h4>
+                            <p>${escapeHtml(testimonial.category)} • ${dateFormatted}</p>
+                        </div>
+                    </div>
+                    ${testimonial.verified ? '<span class="testimonial-badge verified">Verificado</span>' : ''}
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += `<span class="star ${i <= rating ? '' : 'empty'}">★</span>`;
+            }
+            return stars;
+        }
+
+        function filterTestimonials(rating) {
+            const cards = document.querySelectorAll('.testimonial-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (rating === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = card.getAttribute('data-rating') === rating ? 'block' : 'none';
+                }
+            });
+        }
+
+        function submitTestimonial(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const category = document.getElementById('category').value;
+            const rating = document.querySelector('input[name="rating"]:checked').value;
+            const message = document.getElementById('message').value;
+
+            const newTestimonial = {
+                id: Date.now(),
+                name: name,
+                category: category,
+                rating: parseInt(rating),
+                message: message,
+                date: new Date().toISOString().split('T')[0],
+                verified: false
+            };
+
+            const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+            testimonials.unshift(newTestimonial);
+            localStorage.setItem('testimonials', JSON.stringify(testimonials));
+
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+
+            document.getElementById('testimonialForm').reset();
+
+            renderTestimonials(testimonials);
+
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+
+            setTimeout(() => {
+                document.getElementById('testimonialsGrid').scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', initTestimonials);
     </script>
 </body>
 </html>
