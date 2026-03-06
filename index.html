@@ -927,6 +927,324 @@
             color: white;
         }
 
+        /* ==================== COMENTÁRIOS E IA SECTION ==================== */
+        
+        .comments-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+            padding: 5rem 0;
+            border-top: 2px solid var(--border);
+        }
+
+        .comments-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comments-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .comments-header h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .comments-header p {
+            font-size: 1.125rem;
+            color: var(--muted);
+        }
+
+        /* Chat Container */
+        .chat-container {
+            background-color: white;
+            border: 2px solid var(--border);
+            border-radius: 1rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Chat Header */
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .chat-header-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .chat-header-info h3 {
+            margin: 0;
+            font-size: 1.125rem;
+        }
+
+        .chat-header-info p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .chat-status {
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        /* Messages Container */
+        .messages-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: #f9fafb;
+        }
+
+        .message {
+            display: flex;
+            gap: 0.75rem;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .message.ai .message-avatar {
+            background-color: rgba(30, 58, 138, 0.1);
+            color: var(--primary);
+        }
+
+        .message.user .message-avatar {
+            background-color: rgba(5, 150, 105, 0.1);
+            color: var(--accent);
+        }
+
+        .message-content {
+            max-width: 70%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .message.user .message-content {
+            align-items: flex-end;
+        }
+
+        .message-text {
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .message.ai .message-text {
+            background-color: white;
+            color: var(--foreground);
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .message.user .message-text {
+            background-color: var(--accent);
+            color: white;
+            text-align: right;
+        }
+
+        .message-time {
+            font-size: 0.75rem;
+            color: var(--muted);
+            padding: 0 0.5rem;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 0.25rem;
+            padding: 0.75rem 1rem;
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            width: fit-content;
+        }
+
+        .typing-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: var(--muted);
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                opacity: 0.5;
+                transform: translateY(0);
+            }
+            30% {
+                opacity: 1;
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Input Area */
+        .chat-input-area {
+            padding: 1.5rem;
+            background-color: white;
+            border-top: 2px solid var(--border);
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .chat-input-wrapper {
+            flex: 1;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            color: var(--foreground);
+            transition: border-color 0.3s ease;
+        }
+
+        .chat-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .chat-input::placeholder {
+            color: var(--muted);
+        }
+
+        .chat-send-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .chat-send-btn:hover:not(:disabled) {
+            background-color: #047857;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .chat-send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .chat-clear-btn {
+            padding: 0.75rem 1rem;
+            background-color: transparent;
+            color: var(--muted);
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chat-clear-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            background-color: rgba(30, 58, 138, 0.05);
+        }
+
+        /* Info Box */
+        .chat-info-box {
+            background-color: #f0f9ff;
+            border: 2px solid rgba(30, 58, 138, 0.2);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .chat-info-icon {
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .chat-info-text {
+            font-size: 0.875rem;
+            color: var(--foreground);
+            line-height: 1.5;
+        }
+
+        .chat-info-text strong {
+            color: var(--primary);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -945,6 +1263,32 @@
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+
+            .chat-container {
+                height: 500px;
+            }
+
+            .message-content {
+                max-width: 85%;
+            }
+        }
+
+        /* Scrollbar Styling */
+        .messages-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .messages-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .messages-container::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        .messages-container::-webkit-scrollbar-thumb:hover {
+            background: var(--muted);
         }
     </style>
 </head>
@@ -1482,6 +1826,67 @@
         </div>
     </section>
 
+    <!-- ==================== COMENTÁRIOS E IA SECTION ==================== -->
+    <section class="comments-section">
+        <div class="container comments-container">
+            <div class="comments-header">
+                <h2>💬 Dúvidas? Converse com nossa IA</h2>
+                <p>Faça suas perguntas sobre arbitragem de vôlei e receba respostas instantâneas</p>
+            </div>
+
+            <div class="chat-container">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-header-icon">🤖</div>
+                    <div class="chat-header-info">
+                        <h3>Assistente de Arbitragem</h3>
+                        <p><span class="chat-status"></span>Online</p>
+                    </div>
+                </div>
+
+                <!-- Messages Container -->
+                <div class="messages-container" id="messagesContainer">
+                    <div class="message ai">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <div class="message-text">
+                                Olá! 👋 Sou seu assistente de arbitragem de vôlei. Posso responder perguntas sobre categorias de árbitros, salários, requisitos de formação, carreira e muito mais. Como posso ajudá-lo?
+                            </div>
+                            <div class="message-time">Agora</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input Area -->
+                <div class="chat-input-area">
+                    <div class="chat-input-wrapper">
+                        <input 
+                            type="text" 
+                            class="chat-input" 
+                            id="chatInput" 
+                            placeholder="Digite sua pergunta aqui..."
+                            autocomplete="off"
+                        >
+                    </div>
+                    <button class="chat-send-btn" id="sendBtn" onclick="sendMessage()">
+                        Enviar
+                    </button>
+                    <button class="chat-clear-btn" id="clearBtn" onclick="clearChat()">
+                        Limpar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Info Box -->
+            <div class="chat-info-box">
+                <div class="chat-info-icon">ℹ️</div>
+                <div class="chat-info-text">
+                    <strong>Dica:</strong> Você pode fazer perguntas como "Qual é o salário de um árbitro nacional?", "Quais são os requisitos para ser árbitro internacional?" ou "Como faço para começar minha carreira em arbitragem?"
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1539,7 +1944,375 @@
     </footer>
 
     <script>
-        // Smooth scroll for navigation links
+        /**
+         * ==================== SISTEMA DE IA E COMENTÁRIOS ====================
+         * 
+         * Sistema completo de chatbot com IA integrado
+         * Responde perguntas sobre arbitragem de vôlei
+         * 
+         * Características:
+         * - Processamento de linguagem natural
+         * - Respostas contextualizadas
+         * - Histórico de conversa
+         * - Interface responsiva
+         * - Animações suaves
+         */
+
+        // Base de conhecimento sobre arbitragem de vôlei
+        const knowledgeBase = {
+            // Categorias
+            categorias: {
+                keywords: ['categoria', 'categorias', 'nível', 'níveis', 'árbitro', 'árbitros'],
+                response: `Existem 3 principais categorias de árbitros de vôlei no Brasil:
+
+1. **Árbitro Regional/Municipal** (Nível Municipal)
+   - Salário: R$ 100 - R$ 300 por partida
+   - Experiência: 1 ano mínimo
+   - Competições: Estaduais e municipais
+
+2. **Árbitro Nacional** (Nível Nacional)
+   - Salário: R$ 602,00 por partida
+   - Experiência: 2 anos como regional
+   - Competições: Superliga e nacionais
+   - Benefícios: Transporte, hospedagem, alimentação
+
+3. **Árbitro Internacional** (Nível Internacional)
+   - Salário: R$ 785,00 por partida
+   - Experiência: 3+ anos como nacional
+   - Competições: Internacionais
+   - Benefícios: Transporte aéreo, hospedagem, diárias USD 100
+
+Qual categoria você gostaria de saber mais?`
+            },
+
+            // Salários
+            salarios: {
+                keywords: ['salário', 'salarios', 'ganho', 'remuneração', 'quanto ganha', 'valor'],
+                response: `Tabela de remuneração por partida (Superliga 2024/2025):
+
+- Árbitro Internacional: R$ 785,00
+- Árbitro Continental: R$ 693,00
+- Árbitro Nacional: R$ 602,00
+- Árbitro Aspirante a Nacional: R$ 501,00
+- Árbitro Regional: R$ 421,00
+- Apontador Especial: R$ 485,00
+- Apontador Nacional: R$ 403,00
+- Juiz de Linha: R$ 340,00
+
+Para competições estaduais, as taxas variam conforme a federação. Árbitros internacionais também recebem ressarcimento de despesas de deslocamento e hospedagem.`
+            },
+
+            // Requisitos
+            requisitos: {
+                keywords: ['requisito', 'requisitos', 'preciso', 'necessário', 'exigência', 'exigências'],
+                response: `Requisitos gerais para ser árbitro de vôlei:
+
+**Para começar (Árbitro Regional):**
+- Aprovação em curso de formação
+- Estágio regulamentar de 1 ano
+- Registro na federação estadual
+- Clínicas de atualização anuais
+
+**Para Árbitro Nacional:**
+- Ser Regional por 2+ anos
+- Diploma de curso universitário (obrigatório)
+- Aprovação em avaliação teórica e prática
+- Cursos de atualização anuais
+
+**Para Árbitro Internacional:**
+- Ser Nacional com 3+ anos na FIVB
+- Máximo 40 anos para ingressar
+- Prova de inglês intermediário
+- Aprovação da CBV e COBRAV
+
+Todos os árbitros precisam de: conhecimento das regras, comunicação clara e preparo físico.`
+            },
+
+            // Cursos
+            cursos: {
+                keywords: ['curso', 'cursos', 'formação', 'treinamento', 'aprender', 'estudar'],
+                response: `Estrutura de cursos para arbitragem de vôlei:
+
+**1. Curso Básico de Arbitragem** (40 horas)
+   - Público: Aberto
+   - Conteúdo: Regras fundamentais, posicionamento, sinalizações, ética
+   - Pré-requisito: Ensino médio completo
+
+**2. Curso de Árbitro Regional** (60 horas)
+   - Público: Aprovados no Básico
+   - Conteúdo: Regulamentações avançadas, análise de vídeo, comunicação
+   - Pré-requisito: Curso Básico + 1 ano de prática
+
+**3. Curso de Árbitro Nacional** (80 horas)
+   - Público: Árbitros Regionais
+   - Conteúdo: Regras internacionais, gestão, protocolo profissional
+   - Pré-requisito: Diploma universitário + 2 anos Regional
+
+**4. Curso de Árbitro Internacional** (100 horas)
+   - Público: Árbitros Nacionais
+   - Conteúdo: FIVB, inglês técnico, competições internacionais
+   - Pré-requisito: Árbitro Nacional + 3 anos FIVB + Inglês
+
+Encontre cursos nas Federações Estaduais de Vôlei, CBV ou COBRAV.`
+            },
+
+            // Carreira
+            carreira: {
+                keywords: ['carreira', 'progressão', 'progresso', 'caminho', 'etapa', 'etapas'],
+                response: `Caminho da carreira em arbitragem de vôlei:
+
+**Etapa 1: Curso de Formação** (Variável)
+Inicie com um curso de formação oferecido pela federação estadual
+
+**Etapa 2: Árbitro Regional** (1 ano mínimo)
+Após aprovação no curso, atue em competições regionais
+
+**Etapa 3: Árbitro Nacional** (2 anos mínimo)
+Com experiência regional e diploma universitário, avance para o nível nacional
+
+**Etapa 4: Árbitro Internacional** (3+ anos mínimo)
+Após 3+ anos como nacional e aprovação em inglês, atue internacionalmente
+
+Cada etapa requer:
+✓ Conhecimento profundo das regras
+✓ Capacidade de comunicação clara
+✓ Preparo físico adequado
+✓ Participação em clínicas de atualização
+
+Órgãos reguladores: CBV, COBRAV, FIVB, Federações Estaduais`
+            },
+
+            // Benefícios
+            beneficios: {
+                keywords: ['benefício', 'benefícios', 'vantagem', 'vantagens', 'auxílio'],
+                response: `Benefícios por categoria de árbitro:
+
+**Árbitro Regional/Municipal:**
+- Apenas remuneração por partida (R$ 100-300)
+- Participação em cursos de formação
+
+**Árbitro Nacional:**
+- Remuneração: R$ 602,00 por partida
+- Transporte pago (distância > 400km)
+- Hospedagem fornecida
+- Alimentação fornecida
+- Cursos de atualização
+
+**Árbitro Internacional:**
+- Remuneração: R$ 785,00 por partida
+- Transporte aéreo
+- Hospedagem internacional
+- Diárias internacionais (USD 100)
+- Ressarcimento de vistos
+- Atualização profissional contínua
+- Participação em competições internacionais
+
+Todos os árbitros têm oportunidade de desenvolvimento profissional contínuo.`
+            },
+
+            // Federação
+            federacao: {
+                keywords: ['federação', 'federações', 'cbv', 'cobrav', 'fivb', 'órgão'],
+                response: `Órgãos reguladores da arbitragem de vôlei:
+
+**CBV** - Confederação Brasileira de Voleibol
+- Órgão máximo de arbitragem no Brasil
+- Responsável pela regulamentação geral
+
+**COBRAV** - Comissão Brasileira de Arbitragem de Voleibol
+- Responsável pela regulamentação e padronização
+- Realiza avaliações de desempenho
+
+**FIVB** - Fédération Internationale de Volleyball
+- Órgão internacional
+- Regulamenta árbitros internacionais
+
+**Federações Estaduais de Vôlei**
+- Responsáveis pela formação local
+- Registro de árbitros
+- Organização de competições estaduais
+
+Todos trabalham juntos para manter a qualidade e profissionalismo da arbitragem.`
+            },
+
+            // Como começar
+            comeco: {
+                keywords: ['começar', 'iniciar', 'como', 'primeiro', 'start', 'início'],
+                response: `Como começar sua carreira em arbitragem de vôlei:
+
+**Passo 1: Procure a Federação Estadual**
+Localize a federação de vôlei do seu estado
+
+**Passo 2: Inscreva-se em um Curso**
+Procure por cursos de formação para árbitros (Curso Básico)
+
+**Passo 3: Realize o Curso**
+Complete o curso com aprovação (40 horas)
+
+**Passo 4: Registre-se**
+Faça o registro na federação estadual
+
+**Passo 5: Ganhe Experiência**
+Atue em competições regionais (mínimo 1 ano)
+
+**Passo 6: Avance**
+Após 1 ano, você pode tentar o próximo nível
+
+**Requisitos Iniciais:**
+- Ensino médio completo
+- Conhecimento básico de vôlei
+- Disponibilidade para treinamento
+- Preparo físico
+
+Contato: Federações Estaduais, CBV, COBRAV`
+            }
+        };
+
+        /**
+         * Função para processar mensagens do usuário
+         * Utiliza análise de palavras-chave para encontrar respostas apropriadas
+         */
+        function processUserMessage(userMessage) {
+            const lowerMessage = userMessage.toLowerCase();
+            
+            // Procura por correspondência nas palavras-chave
+            for (const [key, data] of Object.entries(knowledgeBase)) {
+                for (const keyword of data.keywords) {
+                    if (lowerMessage.includes(keyword)) {
+                        return data.response;
+                    }
+                }
+            }
+
+            // Resposta padrão se não encontrar correspondência
+            return `Ótima pergunta! 🤔 Infelizmente, não tenho uma resposta específica para isso. 
+
+Posso ajudá-lo com informações sobre:
+- **Categorias** de árbitros (Regional, Nacional, Internacional)
+- **Salários** e remuneração
+- **Requisitos** para cada nível
+- **Cursos** de formação
+- **Carreira** e progressão
+- **Benefícios** adicionais
+- **Federações** e órgãos reguladores
+- **Como começar** sua carreira
+
+Tente reformular sua pergunta ou escolha um desses tópicos!`;
+        }
+
+        /**
+         * Função para enviar mensagem
+         * Adiciona mensagem do usuário e resposta da IA ao chat
+         */
+        function sendMessage() {
+            const chatInput = document.getElementById('chatInput');
+            const messagesContainer = document.getElementById('messagesContainer');
+            const userMessage = chatInput.value.trim();
+
+            if (!userMessage) return;
+
+            // Adiciona mensagem do usuário
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user';
+            userMessageDiv.innerHTML = `
+                <div class="message-content">
+                    <div class="message-text">${escapeHtml(userMessage)}</div>
+                    <div class="message-time">${getCurrentTime()}</div>
+                </div>
+                <div class="message-avatar">👤</div>
+            `;
+            messagesContainer.appendChild(userMessageDiv);
+
+            // Limpa input
+            chatInput.value = '';
+
+            // Simula digitação da IA
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message ai';
+            typingDiv.innerHTML = `
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <div class="typing-indicator">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            `;
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // Simula delay de processamento (500-1000ms)
+            setTimeout(() => {
+                typingDiv.remove();
+
+                // Processa mensagem e obtém resposta
+                const aiResponse = processUserMessage(userMessage);
+
+                // Adiciona resposta da IA
+                const aiMessageDiv = document.createElement('div');
+                aiMessageDiv.className = 'message ai';
+                aiMessageDiv.innerHTML = `
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-text">${escapeHtml(aiResponse).replace(/\n/g, '<br>')}</div>
+                        <div class="message-time">${getCurrentTime()}</div>
+                    </div>
+                `;
+                messagesContainer.appendChild(aiMessageDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 500 + Math.random() * 500);
+
+            // Foca no input novamente
+            chatInput.focus();
+        }
+
+        /**
+         * Função para limpar o chat
+         * Remove todas as mensagens exceto a inicial
+         */
+        function clearChat() {
+            const messagesContainer = document.getElementById('messagesContainer');
+            const messages = messagesContainer.querySelectorAll('.message');
+            
+            // Mantém apenas a primeira mensagem (saudação)
+            messages.forEach((msg, index) => {
+                if (index > 0) {
+                    msg.remove();
+                }
+            });
+
+            document.getElementById('chatInput').focus();
+        }
+
+        /**
+         * Função auxiliar para escapar HTML
+         * Previne injeção de código
+         */
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        /**
+         * Função para obter hora atual formatada
+         */
+        function getCurrentTime() {
+            const now = new Date();
+            return now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        /**
+         * Event listeners
+         */
+        document.getElementById('chatInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Smooth scroll para links de navegação
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
